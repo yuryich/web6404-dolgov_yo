@@ -1,0 +1,626 @@
+/* ==========================================================
+   «Мурлатте» — сайт котокафе с лазерной гравировкой на кофе
+   Лабораторная работа №2, Web-программирование
+   ========================================================== */
+
+/* ---------- Палитра (CSS-переменные) ---------- */
+:root {
+    --cream: #f6efe4;
+    --paper: #fffaf3;
+    --sand: #e6d5bd;
+    --espresso: #3b2a20;
+    --coffee: #7a4a2a;
+    --terracotta: #c8643b;
+    --sage: #5b7a5a;
+    --muted: #8a7563;
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- Универсальный селектор ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- Селекторы тегов ---------- */
+body {
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--espresso);
+    background-color: var(--cream);
+    background-image: url("../img/paw-pattern.svg");
+}
+
+h1, h2, h3 {
+    font-family: var(--serif);
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2rem; margin-bottom: 18px; }
+h3 { font-size: 1.3rem; margin-bottom: 6px; }
+
+p { margin-bottom: 14px; }
+
+a {
+    color: var(--terracotta);
+    text-decoration: none;
+}
+
+/* Псевдокласс :hover */
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ---------- Селектор по ID: шапка ---------- */
+#site-header {
+    background-color: var(--espresso);
+    color: var(--cream);
+}
+
+/* ---------- Селекторы классов ---------- */
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 76px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--cream);
+}
+
+.logo:hover {
+    text-decoration: none;
+}
+
+.logo img {
+    width: 42px;
+    height: 42px;
+}
+
+/* Дочерний селектор (>) */
+.nav > ul {
+    display: flex;
+    gap: 4px;
+    list-style: none;
+}
+
+/* Селектор потомков */
+.nav a {
+    display: block;
+    padding: 8px 16px;
+    color: var(--sand);
+    border-radius: 999px;
+}
+
+.nav a:hover {
+    color: var(--paper);
+    background-color: rgba(255, 255, 255, 0.08);
+    text-decoration: none;
+}
+
+/* Два класса сразу: активный пункт меню */
+.nav a.active {
+    color: var(--espresso);
+    background-color: var(--sand);
+}
+
+/* ---------- Главный экран ---------- */
+.hero {
+    padding: 64px 0;
+    background-color: var(--sand);
+}
+
+.hero-inner {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.hero-text  { flex: 1 1 55%; }
+.hero-image { flex: 1 1 45%; }
+
+.hero-image img {
+    border-radius: 50% 50% 24px 24px;
+    border: 6px solid var(--paper);
+}
+
+/* Псевдоэлементы ::before и ::after */
+.overline {
+    display: inline-block;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--coffee);
+    margin-bottom: 12px;
+}
+
+.overline::before,
+.overline::after {
+    content: " ~ ";
+    color: var(--terracotta);
+}
+
+.hero h1 em {
+    color: var(--terracotta);
+}
+
+.lead {
+    font-size: 1.2rem;
+    color: var(--coffee);
+    margin: 18px 0 28px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    margin-right: 10px;
+    font-weight: bold;
+    color: var(--paper);
+    background-color: var(--terracotta);
+    border: 2px solid var(--terracotta);
+    border-radius: 999px;
+}
+
+.btn:hover {
+    text-decoration: none;
+    background-color: var(--coffee);
+    border-color: var(--coffee);
+}
+
+/* Соседний селектор (+): вторая кнопка — контурная */
+.btn + .btn {
+    color: var(--espresso);
+    background-color: transparent;
+    border-color: var(--espresso);
+}
+
+.btn + .btn:hover {
+    color: var(--paper);
+    background-color: var(--espresso);
+}
+
+/* ---------- Секции ---------- */
+.section {
+    padding: 56px 0;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 40px;
+}
+
+.divider {
+    text-align: center;
+    color: var(--terracotta);
+    letter-spacing: 8px;
+    margin: 8px 0 32px;
+}
+
+/* ---------- Карточки преимуществ ---------- */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.feature {
+    flex: 1 1 280px;
+    padding: 28px;
+    text-align: center;
+    background-color: var(--paper);
+    border: 1px solid var(--sand);
+    border-radius: 18px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.feature:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(59, 42, 32, 0.12);
+}
+
+.feature .icon {
+    font-size: 2.4rem;
+    margin-bottom: 8px;
+}
+
+/* ---------- Цитата / выделенный блок ---------- */
+.quote {
+    margin: 48px 0 0;
+    padding: 36px;
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-style: italic;
+    text-align: center;
+    color: var(--cream);
+    background-color: var(--coffee);
+    border-radius: 18px;
+}
+
+.quote cite {
+    display: block;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: var(--sand);
+}
+
+/* ---------- Таблицы меню ---------- */
+.table-wrap {
+    margin: 0 0 40px;
+    overflow-x: auto;
+    background-color: var(--paper);
+    border: 1px solid var(--sand);
+    border-radius: 18px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+caption {
+    padding: 18px 20px 6px;
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px 20px;
+    border-bottom: 1px dashed var(--sand);
+}
+
+th {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 2px solid var(--espresso);
+}
+
+/* Псевдокласс :nth-child — «зебра» */
+tbody tr:nth-child(even) {
+    background-color: rgba(230, 213, 189, 0.25);
+}
+
+tbody tr:hover {
+    background-color: rgba(200, 100, 59, 0.08);
+}
+
+/* Псевдокласс :last-child — без линии у последней строки */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Выравнивание: по левому краю, по центру, по правому краю */
+.left   { text-align: left; }
+.center { text-align: center; }
+.right  { text-align: right; }
+
+.price {
+    font-weight: bold;
+    color: var(--coffee);
+    white-space: nowrap;
+}
+
+.desc {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+/* Селектор атрибута: метки у позиций меню */
+span[data-tag] {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 0 8px;
+    font-size: 0.7rem;
+    color: var(--paper);
+    border-radius: 999px;
+    vertical-align: middle;
+}
+
+span[data-tag="new"]  { background-color: var(--terracotta); }
+span[data-tag="veg"]  { background-color: var(--sage); }
+span[data-tag="hit"]  { background-color: var(--coffee); }
+
+/* ---------- Галерея ---------- */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px;
+}
+
+.drink {
+    flex: 0 1 calc((100% - 56px) / 3);
+    overflow: hidden;
+    background-color: var(--paper);
+    border: 1px solid var(--sand);
+    border-radius: 18px;
+}
+
+.drink img {
+    width: 100%;
+}
+
+.drink figcaption {
+    padding: 20px 24px;
+}
+
+.drink figcaption p {
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+/* ---------- Страница «О нас» ---------- */
+.story {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.story-text  { flex: 1 1 60%; }
+.story-image { flex: 1 1 40%; }
+
+.story-image img {
+    border-radius: 18px;
+    border: 6px solid var(--paper);
+}
+
+.timeline {
+    list-style: none;
+    margin: 20px 0;
+    border-left: 3px solid var(--terracotta);
+}
+
+.timeline li {
+    position: relative;
+    padding: 0 0 18px 24px;
+}
+
+.timeline li::before {
+    content: "";
+    position: absolute;
+    left: -9px;
+    top: 7px;
+    width: 15px;
+    height: 15px;
+    background-color: var(--cream);
+    border: 3px solid var(--terracotta);
+    border-radius: 50%;
+}
+
+.timeline b {
+    color: var(--terracotta);
+}
+
+.contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.contacts > div {
+    flex: 1 1 300px;
+}
+
+dl {
+    padding: 24px;
+    background-color: var(--paper);
+    border: 1px solid var(--sand);
+    border-radius: 18px;
+}
+
+dt {
+    font-weight: bold;
+    color: var(--coffee);
+    margin-top: 12px;
+}
+
+dt:first-child {
+    margin-top: 0;
+}
+
+dd {
+    color: var(--muted);
+}
+
+/* ---------- Подвал ---------- */
+#site-footer {
+    margin-top: 40px;
+    padding: 28px 0;
+    font-size: 0.9rem;
+    color: var(--sand);
+    background-color: var(--espresso);
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+#site-footer a {
+    color: var(--sand);
+}
+
+/* ---------- Адаптивность ---------- */
+@media (max-width: 760px) {
+    h1 { font-size: 2.2rem; }
+
+    .header-inner {
+        flex-direction: column;
+        height: auto;
+        padding: 14px 0;
+        gap: 10px;
+    }
+
+    .hero-inner,
+    .story {
+        flex-direction: column;
+    }
+}
+
+/* Отступы между блоками страницы «О нас» (соседний селектор) */
+.story + .page-title {
+    margin-top: 56px;
+}
+
+.contacts + p {
+    margin-top: 16px;
+}
+
+/* ---------- Как работает гравировка: шаги ---------- */
+.steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.step {
+    flex: 1 1 260px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 22px;
+    background-color: var(--paper);
+    border: 1px dashed var(--terracotta);
+    border-radius: 18px;
+}
+
+.step p {
+    margin: 0;
+}
+
+.step-num {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    text-align: center;
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    color: var(--paper);
+    background-color: var(--terracotta);
+    border-radius: 50%;
+}
+
+/* ---------- Карточки котиков ---------- */
+.cats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    margin-bottom: 56px;
+}
+
+.cat {
+    flex: 1 1 440px;
+    display: flex;
+    overflow: hidden;
+    background-color: var(--paper);
+    border: 1px solid var(--sand);
+    border-radius: 18px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cat:hover {
+    transform: rotate(-1deg) translateY(-3px);
+    box-shadow: 0 10px 24px rgba(59, 42, 32, 0.12);
+}
+
+.cat img {
+    width: 45%;
+    object-fit: cover;
+}
+
+.cat-info {
+    padding: 22px;
+}
+
+.age {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.status {
+    display: inline-block;
+    padding: 2px 12px;
+    font-size: 0.8rem;
+    border-radius: 999px;
+}
+
+/* Селектор атрибута: статус котика */
+.status[data-status="home"] {
+    color: var(--paper);
+    background-color: var(--terracotta);
+}
+
+.status[data-status="stay"] {
+    color: var(--espresso);
+    background-color: var(--sand);
+}
+
+/* ---------- Правила (нумерованный список) ---------- */
+.rules {
+    max-width: 680px;
+    margin: 0 auto;
+    padding-left: 24px;
+}
+
+.rules li {
+    padding: 8px 0 8px 8px;
+    border-bottom: 1px dashed var(--sand);
+}
+
+.rules li::marker {
+    font-family: var(--serif);
+    font-weight: bold;
+    color: var(--terracotta);
+}
+
+@media (max-width: 760px) {
+    .cat {
+        flex-direction: column;
+    }
+
+    .cat img {
+        width: 100%;
+    }
+
+    .drink {
+        flex-basis: 100%;
+    }
+}
