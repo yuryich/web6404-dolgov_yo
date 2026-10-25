@@ -37,3 +37,13 @@
 - **CSS:** отдельный файл [`lab2/css/style.css`](lab2/css/style.css). Селекторы: универсальный, тега, класса, ID, потомков, дочерний (`>`), соседний (`+`), атрибута (`span[data-tag]`, `.status[data-status]`), псевдоклассы (`:hover`, `:nth-child`, `:last-child`, `:first-child`), псевдоэлементы (`::before`, `::after`, `::marker`). Выравнивание в таблицах по левому краю, по центру и по правому краю. CSS-переменные, flexbox, адаптивная вёрстка через `@media`.
 
 ![Капучино «Котик»](lab2/img/hero.svg)
+
+---
+
+# Лабораторная работа №3
+
+**Тема:** изучение основ JavaScript.
+
+Реализованы 10 функций в [`lab3/src/core.js`](lab3/src/core.js):
+`isInteger`, `even`, `sumTo`, `recSumTo`, `factorial`, `isBinary`,
+`fibonacci`, `getOperationFn`, `sequence`, `deepEqual`.
