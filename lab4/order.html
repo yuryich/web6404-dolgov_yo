@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мурлатте — Заказать</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/order.js" defer></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header__inner">
+            <a class="logo" href="index.html">
+                <svg class="logo__icon" viewBox="0 0 64 64" aria-hidden="true">
+                    <path class="logo__face" d="M10 30 L8 6 L24 18 Q32 15 40 18 L56 6 L54 30 Q54 56 32 56 Q10 56 10 30 Z"/>
+                    <circle class="logo__eye" cx="23" cy="33" r="3.5"/>
+                    <circle class="logo__eye" cx="41" cy="33" r="3.5"/>
+                    <path class="logo__nose" d="M29 40 L35 40 L32 44 Z"/>
+                    <path class="logo__mouth" d="M32 44 Q28 49 24 46 M32 44 Q36 49 40 46"/>
+                </svg>
+                Мурлатте
+            </a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a class="nav__link" href="index.html">Главная</a></li>
+                    <li class="nav__item"><a class="nav__link" href="menu.html">Меню</a></li>
+                    <li class="nav__item"><a class="nav__link" href="gallery.html">Гравировка</a></li>
+                    <li class="nav__item"><a class="nav__link" href="cats.html">Котики</a></li>
+                    <li class="nav__item"><a class="nav__link" href="about.html">О нас</a></li>
+                    <li class="nav__item"><a class="nav__link nav__link_active" href="order.html">Заказать</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <h1 class="heading__title">Заказать напиток</h1>
+            <p class="heading__subtitle">Выберите напиток и зверька — лазер нарисует его на пене</p>
+
+            <form class="form" id="order-form" action="/api/order" method="post">
+                <div class="form__row">
+                    <div class="field">
+                        <label class="field__label" for="customerName">Ваше имя</label>
+                        <input class="field__control" type="text" id="customerName" name="customerName"
+                               placeholder="Например, Юрий" minlength="2" maxlength="40" required>
+                    </div>
+                    <div class="field">
+                        <label class="field__label" for="email">Электронная почта</label>
+                        <input class="field__control" type="email" id="email" name="email"
+                               placeholder="name@example.com" required>
+                    </div>
+                </div>
+
+                <div class="form__row">
+                    <div class="field">
+                        <label class="field__label" for="drink">Напиток</label>
+                        <select class="field__control" id="drink" name="drink" required>
+                            <option value="" data-price="0" disabled selected>Выберите из меню…</option>
+                            <option value="Капучино «Котик»" data-price="260">Капучино «Котик» — 260 ₽</option>
+                            <option value="Латте «Панда»" data-price="290">Латте «Панда» — 290 ₽</option>
+                            <option value="Флэт уайт «Мишка»" data-price="270">Флэт уайт «Мишка» — 270 ₽</option>
+                            <option value="Раф «Лисёнок»" data-price="310">Раф «Лисёнок» — 310 ₽</option>
+                            <option value="Какао «Зайка»" data-price="240">Какао «Зайка» — 240 ₽</option>
+                            <option value="Овсяный латте" data-price="320">Овсяный латте — 320 ₽</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label class="field__label" for="quantity">Количество чашек</label>
+                        <input class="field__control" type="number" id="quantity" name="quantity"
+                               value="1" min="1" max="10" required>
+                    </div>
+                </div>
+
+                <fieldset class="choices">
+                    <legend class="choices__legend">Рисунок на пене</legend>
+                    <div class="choices__list">
+                        <label class="choice">
+                            <input class="choice__input" type="radio" name="animal" value="Котик" checked>
+                            <span>Котик</span>
+                        </label>
+                        <label class="choice">
+                            <input class="choice__input" type="radio" name="animal" value="Панда">
+                            <span>Панда</span>
+                        </label>
+                        <label class="choice">
+                            <input class="choice__input" type="radio" name="animal" value="Мишка">
+                            <span>Мишка</span>
+                        </label>
+                        <label class="choice">
+                            <input class="choice__input" type="radio" name="animal" value="Зайка">
+                            <span>Зайка</span>
+                        </label>
+                        <label class="choice">
+                            <input class="choice__input" type="radio" name="animal" value="Лисёнок">
+                            <span>Лисёнок</span>
+                        </label>
+                        <label class="choice">
+                            <input class="choice__input" type="radio" name="animal" value="Мой питомец (по фото)">
+                            <span>Мой питомец (по фото)</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div class="field">
+                    <label class="field__label" for="pickupTime">Когда заберёте? (необязательно)</label>
+                    <input class="field__control" type="time" id="pickupTime" name="pickupTime"
+                           min="10:00" max="21:00">
+                </div>
+
+                <fieldset class="choices">
+                    <legend class="choices__legend">Дополнительно</legend>
+                    <div class="choices__list">
+                        <label class="choice">
+                            <input class="choice__input" type="checkbox" name="extras" value="Овсяное молоко">
+                            <span>Овсяное молоко</span>
+                        </label>
+                        <label class="choice">
+                            <input class="choice__input" type="checkbox" name="extras" value="Сироп (карамель)">
+                            <span>Сироп (карамель)</span>
+                        </label>
+                        <label class="choice">
+                            <input class="choice__input" type="checkbox" name="extras" value="Печенье «Лапки»">
+                            <span>Печенье «Лапки»</span>
+                        </label>
+                        <label class="choice">
+                            <input class="choice__input" type="checkbox" name="extras" value="Подарочная упаковка">
+                            <span>Подарочная упаковка</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div class="field">
+                    <label class="field__label" for="comment">Пожелания</label>
+                    <textarea class="field__control field__control_area" id="comment" name="comment"
+                              maxlength="200" placeholder="Например: у питомца белое пятнышко на носу"></textarea>
+                </div>
+
+                <label class="choice">
+                    <input class="choice__input" type="checkbox" name="consent" value="yes" required>
+                    <span>Я согласен на обработку персональных данных</span>
+                </label>
+
+                <div class="form__actions">
+                    <button class="btn" type="submit">Отправить заказ</button>
+                    <button class="btn btn_outline" type="reset">Очистить</button>
+                </div>
+
+                <p class="form__status" id="form-status" role="status" aria-live="polite"></p>
+                <p class="form__hint">После отправки откройте консоль браузера (F12 → Console) — там будет ваш заказ.</p>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <span>&copy; 2026 Котокафе «Мурлатте»</span>
+            <span>Лабораторная работа №4 · Долгов Ю.О., 6404-010302D</span>
+        </div>
+    </footer>
+
+</body>
+</html>

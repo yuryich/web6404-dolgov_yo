@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мурлатте — Меню</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header__inner">
+            <a class="logo" href="index.html">
+                <svg class="logo__icon" viewBox="0 0 64 64" aria-hidden="true">
+                    <path class="logo__face" d="M10 30 L8 6 L24 18 Q32 15 40 18 L56 6 L54 30 Q54 56 32 56 Q10 56 10 30 Z"/>
+                    <circle class="logo__eye" cx="23" cy="33" r="3.5"/>
+                    <circle class="logo__eye" cx="41" cy="33" r="3.5"/>
+                    <path class="logo__nose" d="M29 40 L35 40 L32 44 Z"/>
+                    <path class="logo__mouth" d="M32 44 Q28 49 24 46 M32 44 Q36 49 40 46"/>
+                </svg>
+                Мурлатте
+            </a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a class="nav__link" href="index.html">Главная</a></li>
+                    <li class="nav__item"><a class="nav__link nav__link_active" href="menu.html">Меню</a></li>
+                    <li class="nav__item"><a class="nav__link" href="gallery.html">Гравировка</a></li>
+                    <li class="nav__item"><a class="nav__link" href="cats.html">Котики</a></li>
+                    <li class="nav__item"><a class="nav__link" href="about.html">О нас</a></li>
+                    <li class="nav__item"><a class="nav__link" href="order.html">Заказать</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <h1 class="heading__title">Меню</h1>
+            <p class="heading__subtitle">Гравировка на пене входит в стоимость любого напитка с молоком</p>
+
+            <div class="table-wrap">
+                <table class="table">
+                    <caption class="table__caption">Кофе с гравировкой</caption>
+                    <thead>
+                        <tr class="table__row">
+                            <th class="table__cell table__cell_head table__cell_left">Позиция</th>
+                            <th class="table__cell table__cell_head table__cell_center">Объём</th>
+                            <th class="table__cell table__cell_head table__cell_right">Цена</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table__row">
+                            <td class="table__cell table__cell_left">Капучино «Котик» <span class="tag tag_hit">хит</span><span class="table__desc">Эспрессо, молочная пена и котик на ней</span></td>
+                            <td class="table__cell table__cell_center">300 мл</td>
+                            <td class="table__cell table__cell_right table__cell_price">260 ₽</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="table__cell table__cell_left">Латте «Панда»<span class="table__desc">Мягкий латте с пандой</span></td>
+                            <td class="table__cell table__cell_center">400 мл</td>
+                            <td class="table__cell table__cell_right table__cell_price">290 ₽</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="table__cell table__cell_left">Флэт уайт «Мишка»<span class="table__desc">Двойной эспрессо и плюшевый мишка</span></td>
+                            <td class="table__cell table__cell_center">200 мл</td>
+                            <td class="table__cell table__cell_right table__cell_price">270 ₽</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="table__cell table__cell_left">Раф «Лисёнок» <span class="tag tag_new">новинка</span><span class="table__desc">Сливочный раф с карамелью</span></td>
+                            <td class="table__cell table__cell_center">350 мл</td>
+                            <td class="table__cell table__cell_right table__cell_price">310 ₽</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="table__cell table__cell_left">Какао «Зайка»<span class="table__desc">Для тех, кто без кофеина</span></td>
+                            <td class="table__cell table__cell_center">300 мл</td>
+                            <td class="table__cell table__cell_right table__cell_price">240 ₽</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="table__cell table__cell_left">Овсяный латте <span class="tag tag_veg">растит. молоко</span><span class="table__desc">На овсяном молоке, любой рисунок</span></td>
+                            <td class="table__cell table__cell_center">400 мл</td>
+                            <td class="table__cell table__cell_right table__cell_price">320 ₽</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="table__cell table__cell_left">Эспрессо<span class="table__desc">Без пены — значит, без котика :(</span></td>
+                            <td class="table__cell table__cell_center">30 мл</td>
+                            <td class="table__cell table__cell_right table__cell_price">150 ₽</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-wrap">
+                <table class="table">
+                    <caption class="table__caption">Выберите рисунок</caption>
+                    <thead>
+                        <tr class="table__row">
+                            <th class="table__cell table__cell_head table__cell_left">Рисунок</th>
+                            <th class="table__cell table__cell_head table__cell_center">Время</th>
+                            <th class="table__cell table__cell_head table__cell_right">Доплата</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table__row"><td class="table__cell table__cell_left">Котик</td><td class="table__cell table__cell_center">8 сек</td><td class="table__cell table__cell_right table__cell_price">0 ₽</td></tr>
+                        <tr class="table__row"><td class="table__cell table__cell_left">Панда, мишка, зайка</td><td class="table__cell table__cell_center">10 сек</td><td class="table__cell table__cell_right table__cell_price">0 ₽</td></tr>
+                        <tr class="table__row"><td class="table__cell table__cell_left">Лисёнок</td><td class="table__cell table__cell_center">12 сек</td><td class="table__cell table__cell_right table__cell_price">0 ₽</td></tr>
+                        <tr class="table__row"><td class="table__cell table__cell_left">Ваш питомец по фото <span class="tag tag_new">новинка</span></td><td class="table__cell table__cell_center">20 сек</td><td class="table__cell table__cell_right table__cell_price">+100 ₽</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-wrap">
+                <table class="table">
+                    <caption class="table__caption">Десерты</caption>
+                    <thead>
+                        <tr class="table__row">
+                            <th class="table__cell table__cell_head table__cell_left">Позиция</th>
+                            <th class="table__cell table__cell_head table__cell_center">Вес</th>
+                            <th class="table__cell table__cell_head table__cell_right">Цена</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table__row">
+                            <td class="table__cell table__cell_left">Печенье «Лапки» <span class="tag tag_hit">хит</span><span class="table__desc">Песочное, в форме кошачьей лапки</span></td>
+                            <td class="table__cell table__cell_center">3 шт.</td>
+                            <td class="table__cell table__cell_right table__cell_price">150 ₽</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="table__cell table__cell_left">Чизкейк «Нью-Йорк»<span class="table__desc">С ягодным соусом</span></td>
+                            <td class="table__cell table__cell_center">120 г</td>
+                            <td class="table__cell table__cell_right table__cell_price">260 ₽</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="table__cell table__cell_left">Круассан<span class="table__desc">Классический, на сливочном масле</span></td>
+                            <td class="table__cell table__cell_center">1 шт.</td>
+                            <td class="table__cell table__cell_right table__cell_price">140 ₽</td>
+                        </tr>
+                        <tr class="table__row">
+                            <td class="table__cell table__cell_left">Пирожное «Котя» <span class="tag tag_new">новинка</span><span class="table__desc">Шоколадный мусс с ушками</span></td>
+                            <td class="table__cell table__cell_center">100 г</td>
+                            <td class="table__cell table__cell_right table__cell_price">220 ₽</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="table-wrap">
+                <table class="table">
+                    <caption class="table__caption">Время с котиками</caption>
+                    <thead>
+                        <tr class="table__row">
+                            <th class="table__cell table__cell_head table__cell_left">Тариф</th>
+                            <th class="table__cell table__cell_head table__cell_center">Длительность</th>
+                            <th class="table__cell table__cell_head table__cell_right">Будни</th>
+                            <th class="table__cell table__cell_head table__cell_right">Выходные</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table__row"><td class="table__cell table__cell_left">Знакомство</td><td class="table__cell table__cell_center">30 мин</td><td class="table__cell table__cell_right table__cell_price">200 ₽</td><td class="table__cell table__cell_right table__cell_price">250 ₽</td></tr>
+                        <tr class="table__row"><td class="table__cell table__cell_left">Мурчательный час</td><td class="table__cell table__cell_center">1 час</td><td class="table__cell table__cell_right table__cell_price">350 ₽</td><td class="table__cell table__cell_right table__cell_price">450 ₽</td></tr>
+                        <tr class="table__row"><td class="table__cell table__cell_left">Котовый день</td><td class="table__cell table__cell_center">без ограничений</td><td class="table__cell table__cell_right table__cell_price">800 ₽</td><td class="table__cell table__cell_right table__cell_price">1000 ₽</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="text text_align_center">Как выглядит гравировка — в разделе <a href="gallery.html">«Гравировка»</a>.</p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <span>&copy; 2026 Котокафе «Мурлатте»</span>
+            <span>Лабораторная работа №4 · Долгов Ю.О., 6404-010302D</span>
+        </div>
+    </footer>
+
+</body>
+</html>
